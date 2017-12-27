@@ -1,0 +1,15 @@
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.navbar-top-links {
+  margin-right: 0;
+}
+.navbar-top-links li {
+  display: inline-block;
+}
+.navbar-top-links li a {
+  padding: 15px 10px;
+  min-height: 50px;
+}

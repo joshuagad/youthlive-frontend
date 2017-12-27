@@ -1,0 +1,161 @@
+<div class="facet container-fluid">
+  <div class="row">
+    <div class="facet-header col-sm-12">
+      <div class="facet-title enabled">
+        <h1>
+          <i class="fa fa-fw fa-user"></i>
+          <span class="facet-pkey" title="">{{person.first_name}} {{person.last_name}}</span>
+        </h1>
+      </div>
+
+      <div class="facet-tabs">
+        <div class="facet-group" name="settings">
+          <div>
+            <ul class="facet-tab">
+              <li class="t selected"><a class="tab-link selected">Settings</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="facet-group">
+          <div>
+            <ul class="facet-tab">
+              <li class="t"><a class="tab-link">Discipleship</a></li>
+              <li class="t"><a class="tab-link">Ministries</a></li>
+              <li class="t"><a class="tab-link">Workflows</a></li>
+              <li class="t"><a class="tab-link">Other</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="facet-controls clearfix">
+        <div class="facet-controls-left">
+          <div class="widget control-buttons">
+            <button class="btn btn-default" name="refresh" title="Refresh profile">
+              <i class="fa fa-refresh"></i> Refresh
+            </button>
+            <button class="btn btn-default" name="revert" title="Revert to original" disabled>
+              <i class="fa fa-undo"></i> Revert
+            </button>
+            <button class="btn btn-default" name="save" title="Update profile" disabled>
+              <i class="fa fa-upload"></i> Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="facet-content col-sm-12">
+      <div class="details-content row">
+        <div class="widget col-sm-12 col-md-6">
+          <h2 name="profile">Personal Details</h2>
+          <div class="form-horizontal">
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>Given name</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <input class="form-control" value="{{person.given_name}}"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>First name</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <input class="form-control" value="{{person.first_name}}"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>Last name</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <input class="form-control" value="{{person.last_name}}"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>Full name</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <input class="form-control" value="{{person.full_name}}"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>Nickname</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <input class="form-control" value="{{person.nickname}}"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>Birthdate</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <input class="form-control" value="{{person.birthdate | date}}"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>Gender</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <select class="form-control" value="{{person.gender}}">
+                  <option value=""></option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="widget col-sm-12 col-md-6">
+          <h2>Test Details</h2>
+          <div class="form-horizontal" *ngFor="let detail of personalDetailsList">
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>{{detail.label}}</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <p class="form-control-static">{{person[detail.value]}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="widget col-sm-12 col-md-6">
+          <h2 name="other">Other Details</h2>
+          <div class="form-horizontal">
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>School</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <input class="form-control" value="{{person.school}}"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>Year/Course</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <input class="form-control" value="{{person.grade}}"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="col-sm-3 control-label">
+                <label>Home Church</label>
+              </div>
+              <div class="col-sm-9 controls">
+                <input class="form-control" value="{{person.church}}"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

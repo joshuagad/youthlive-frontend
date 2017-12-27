@@ -1,0 +1,178 @@
+.facet-title {
+    color: gray;
+}
+
+.facet-title.no-pkey {
+    color: inherit;
+}
+
+.facet-pkey {
+    color:black;
+    text-transform: none;
+}
+
+.breadcrumb {
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+
+.breadcrumb a {
+    cursor: pointer;
+}
+
+/* ---- Facet Tabs ---- */
+
+.facet-group {
+    float: left;
+    margin-right: 1em;
+}
+
+.facet-group-label {
+    height: 20px;
+}
+
+.facet-tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.facet-tab li {
+    display: inline-block;
+    padding-right: 1px;
+}
+
+.facet-tab li a {
+    background-color: #dedbde;
+    border-left: 1px solid #c9c3ba;
+    border-right: 1px solid #c9c3ba;
+    margin: 0 0 0;
+    padding: 8px 16px 4px 16px;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 19px;
+    color: #666666;
+}
+
+.facet-tab li a.selected {
+    color: #6C6F73;
+    background-color: #f1f0ee;
+    font-weight: bold;
+}
+
+.facet-tab li.settings {
+    margin-left:1em;  margin-right:1em;
+}
+
+
+/* Facet tabs coloring */
+
+.facet-group li a {
+    background-repeat: repeat-x;
+    background-position: 0px -33px;
+}
+
+.facet-group li a.selected {
+}
+
+div[name=settings].facet-group li a {
+    background-position: 0px -66px;
+}
+
+.facet-group li[name^=member] a,
+.facet-group li[name^=managedby] a {
+    background-position: 0px 0px;
+}
+
+.facet-group li[name^=memberof] a {
+    background-position: 0px -33px;
+}
+
+/* ---- Facet Controls ---- */
+
+.facet-controls {
+    padding: 5px 0px;
+    clear: both;
+}
+
+.facet-controls-left {
+    float: left;
+}
+
+.facet-controls-right {
+    float: right;
+}
+
+.facet-controls-right .fa.fa-user {
+    color: #aaa;
+}
+
+.control-buttons {
+    display: inline-block;
+}
+
+.control-buttons button {
+    margin-right: 5px;
+}
+
+.facet-actions {
+    display: inline-block;
+}
+
+/* ---- Details Facet ---- */
+
+.details-content {
+    border-top: 1px solid #DFDFDF;
+}
+
+
+/* --- Facet title states --- */
+
+.facet-title h1 {
+    display: inline-block;
+}
+
+.facet-title .header-icon {
+    display: none;
+    font-size: 70%;
+    vertical-align: 20%;
+    /* Font awesome style, TODO: use mixin */
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.facet-title.enabled .header-icon:before {
+    content: "\f00c";
+    margin-right: 5px;
+}
+
+.facet-title.disabled .header-icon:before {
+    content: "\f068";
+    margin-right: 5px;
+}
+
+.facet-title.preserved .header-icon:before {
+    content: "\f014";
+    margin-right: 5px;
+}
+
+.facet-title.staging .header-icon:before {
+    content: "\f0ad";
+    margin-right: 5px;
+}
+
+.facet-title.disabled h1,
+.facet-title.disabled h1 .facet-pkey{
+    color: gray;
+}
+
+.disabled {
+    color: gray;
+    cursor: default;
+}
