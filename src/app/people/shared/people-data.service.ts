@@ -24,13 +24,13 @@ export class PeopleDataService {
 
   searchPeople(term: string): Observable<Person[]> {
 
-  if (!term.trim()) {
-    return of([]);
-  }
+    if (!term.trim()) {
+      return of([]);
+    }
 
-  var url = `${this.peopleUrl}/?where[given_name]=${term}`
-  console.log(url);
-  return this.http.get<Person[]>(url);
+    var url = `${this.peopleUrl}/?where[given_name]=${term}`
+    console.log(url);
+    return this.http.get<Person[]>(url);
 }
 
 }

@@ -1,31 +1,18 @@
-<div class="container">
-  <div class="row">
-    <div class="panel col-sm-12 col-md-6">
-      <div class="panel-heading">
-        Leave space for general stats!
-      </div>
-      <!-- <div class="panel-footer">
-        Here are general stats :)
-      </div> -->
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 30px">
   <div class="row">
     <div class="facet-header col-sm-12">
       <div class="facet-tabs">
         <div class="facet-group" name="settings">
           <div>
             <ul class="facet-tab">
-              <li class="t selected"><a class="tab-link selected">Database</a></li>
+              <li class="t selected"><a routerLink='/database' class="tab-link selected">Database</a></li>
             </ul>
           </div>
         </div>
         <div class="facet-group">
           <div>
             <ul class="facet-tab">
-              <li class="t"><a class="tab-link">Discipleship Tree</a></li>
+              <li class="t"><a routerLink='discipleshiptree' class="tab-link">Discipleship Tree</a></li>
               <li class="t"><a class="tab-link">Ministries</a></li>
               <li class="t"><a class="tab-link">Other</a></li>
             </ul>
@@ -35,5 +22,5 @@
     </div>
   </div>
 
-  
+  <router-outlet></router-outlet>
 </div>

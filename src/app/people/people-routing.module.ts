@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { PeopleComponent } from './people.component';
 import { PeopleDatabaseComponent } from './people-database/people-database.component';
+import { PersonComponent } from './person/person.component';
 
 const routes: Routes = [
-  { path: '', component: PeopleDatabaseComponent },
-  { path: 'database', component: PeopleDatabaseComponent },
-  // { path: 'people', loadChildren: 'people/people.module#PeopleModule' },
-  // { path: 'reports', component: ReportsComponent }
+  { path: '', component: PeopleComponent,
+    children: [
+      { path: '', component:  PeopleDatabaseComponent },
+    ]
+  },
+  { path: 'view/:_id', component: PersonComponent }
 ];
 
 @NgModule({

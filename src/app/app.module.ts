@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PeopleModule } from './people/people.module';
 import { ReportsModule } from './reports/reports.module';
-import { D3Module } from './shared/d3.module';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 
