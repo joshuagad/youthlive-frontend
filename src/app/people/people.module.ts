@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { PeopleRoutingModule } from './people-routing.module';
 
@@ -15,7 +15,7 @@ import { PeopleDataService } from './shared/people-data.service';
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
     PeopleRoutingModule
   ],
   exports: [

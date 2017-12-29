@@ -22,6 +22,11 @@ export class PeopleDataService {
     return this.http.get<Person>(url);
   }
 
+  updatePerson(person: Person): Observable<any> {
+    const url = `${this.peopleUrl}/${person._id}`;
+    return this.http.put<Person>(url, person);
+  }
+
   searchPeople(term: string): Observable<Person[]> {
 
     if (!term.trim()) {
