@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    RouterModule
   ],
   exports: [
     NavbarComponent
