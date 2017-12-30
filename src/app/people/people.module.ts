@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { PeopleRoutingModule } from './people-routing.module';
 
@@ -11,13 +11,14 @@ import { PersonComponent } from './person/person.component';
 import { PeopleDatabaseComponent } from './people-database/people-database.component';
 
 import { PeopleDataService } from './shared/people-data.service';
+import { AddPersonModalComponent } from './add-person-modal/add-person-modal.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule,
+    ModalModule.forRoot(),
     PeopleRoutingModule
   ],
   exports: [
@@ -28,7 +29,11 @@ import { PeopleDataService } from './shared/people-data.service';
   declarations: [
     PeopleComponent,
     PersonComponent,
-    PeopleDatabaseComponent
+    PeopleDatabaseComponent,
+    AddPersonModalComponent
+  ],
+  entryComponents: [
+    AddPersonModalComponent
   ],
   providers: [
     PeopleDataService
