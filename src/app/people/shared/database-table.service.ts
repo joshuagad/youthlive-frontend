@@ -14,7 +14,7 @@ export class DatabaseTableService {
   ) { }
 
   refreshTable(): void {
-    this.http.get(this.peopleUrl).subscribe(people => {
+    this.http.get<Person[]>(this.peopleUrl).subscribe(people => {
       this.peopleList.next(people);
     });
   }
@@ -23,8 +23,8 @@ export class DatabaseTableService {
     return this.peopleList.asObservable();
   }
 
-  addPerson(person: Person): Observable<any> {
-    return this.http.post(this.peopleUrl, person);
+  addPerson(person: Person): Observable<Person> {
+    return this.http.post<Person>(this.peopleUrl, person);
   }
 
   deletePeople(people_ids): void {
