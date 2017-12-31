@@ -40,9 +40,7 @@
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-sm btn-primary" (click)="saveAndClose()">Save and Close</button>
-  <button type="button" class="btn btn-sm btn-success" (click)="modalRef.hide()">Save and Edit</button>
-  <button type="button" class="btn btn-sm btn-info" (click)="modalRef.hide()">Save and Add New</button>
+  <button type="button" class="btn btn-sm btn-outline-dark" (click)="saveAndClose()" [disabled]="newPersonForm.status == 'INVALID'">Save and Close</button>
+  <button type="button" class="btn btn-sm btn-outline-dark" (click)="saveAndEdit()" [disabled]="newPersonForm.status == 'INVALID'">Save and Edit</button>
+  <button type="button" class="btn btn-sm btn-outline-dark" (click)="saveAndAddNew()" [disabled]="newPersonForm.status == 'INVALID'">Save and Add New</button>
 </div>
-
-<p>{{newPersonForm.value | json}}</p>

@@ -12,6 +12,7 @@ import { PersonComponent } from './person/person.component';
 import { PeopleDatabaseComponent } from './people-database/people-database.component';
 
 import { PeopleDataService } from './shared/people-data.service';
+import { DatabaseTableService } from './shared/database-table.service';
 import { AddPersonModalComponent } from './add-person-modal/add-person-modal.component';
 import { PersonProfileComponent } from './person-profile/person-profile.component';
 
@@ -40,7 +41,8 @@ import { PersonProfileComponent } from './person-profile/person-profile.componen
     AddPersonModalComponent
   ],
   providers: [
-    PeopleDataService
+    PeopleDataService,
+    DatabaseTableService
   ]
 })
 export class PeopleModule { }
