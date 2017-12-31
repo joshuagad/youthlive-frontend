@@ -28,7 +28,6 @@ export class PeopleDataService {
   }
 
   searchPeople(term: string): Observable<Person[]> {
-
     if (!term.trim()) {
       return of([]);
     }
@@ -36,6 +35,5 @@ export class PeopleDataService {
     var url = `${this.peopleUrl}/?where[given_name]=${term}`
     console.log(url);
     return this.http.get<Person[]>(url);
-}
-
+  }
 }

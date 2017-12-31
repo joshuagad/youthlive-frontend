@@ -12,6 +12,7 @@ import { PeopleDatabaseComponent } from './people-database/people-database.compo
 
 import { PeopleDataService } from './shared/people-data.service';
 import { AddPersonModalComponent } from './add-person-modal/add-person-modal.component';
+import { PersonProfileComponent } from './person-profile/person-profile.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { AddPersonModalComponent } from './add-person-modal/add-person-modal.com
     PeopleComponent,
     PersonComponent,
     PeopleDatabaseComponent,
-    AddPersonModalComponent
+    AddPersonModalComponent,
+    PersonProfileComponent
   ],
   entryComponents: [
     AddPersonModalComponent

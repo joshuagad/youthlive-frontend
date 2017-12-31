@@ -1,153 +1,17 @@
-<div class="facet container-fluid">
-  <div class="row">
-    <div class="facet-header col-sm-12">
-      <ol class="breadcrumb"><li><a title="Database" routerLink="/people">Database</a> <i class="fa fa-angle-double-right"></i> {{person.first_name}} {{person.last_name}}</li></ol>
-      <div class="facet-title enabled">
-        <h1>
-          <i class="fa fa-fw fa-user"></i>
-          <span class="facet-pkey" title="">{{person.first_name}} {{person.last_name}}</span>
-        </h1>
-      </div>
-
-      <div class="facet-tabs">
-        <div class="facet-group" name="settings">
-          <div>
-            <ul class="facet-tab">
-              <li class="t selected"><a class="tab-link selected">Settings</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="facet-group">
-          <div>
-            <ul class="facet-tab">
-              <li class="t"><a class="tab-link">Discipleship</a></li>
-              <li class="t"><a class="tab-link">Ministries</a></li>
-              <li class="t"><a class="tab-link">Workflows</a></li>
-              <li class="t"><a class="tab-link">Other</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="facet-controls clearfix">
-        <div class="facet-controls-left">
-          <div class="widget control-buttons">
-            <button class="btn btn-default" name="refresh" title="Refresh profile" (click)="refreshData()">
-              <i class="fa fa-refresh"></i> Refresh
-            </button>
-            <button class="btn btn-default" name="revert" title="Revert to original" (click)="revertData()">
-              <i class="fa fa-undo"></i> Revert
-            </button>
-            <button class="btn btn-default" name="save" title="Update profile" (click)="submitData()">
-              <i class="fa fa-upload"></i> Save
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="card border-0">
+  <div class="card-header">
+    <h1 class="my-3">
+      <i class="fa fa-fw fa-user"></i>
+      <span class="facet-pkey" title="">{{person.first_name}} {{person.last_name}}</span>
+    </h1>
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item"><a class="nav-link active">Profile</a></li>
+      <li class="nav-item"><a class="nav-link">Discipleship</a></li>
+      <li class="nav-item"><a class="nav-link">Ministries</a></li>
+      <li class="nav-item"><a class="nav-link">Other</a></li>
+    </ul>
   </div>
-
-  <div class="row">
-    <div class="facet-content col-sm-12">
-      <form [formGroup]="personForm" novalidate>
-        <div class="details-content row">
-          <div class="widget col-sm-12 col-md-6">
-            <h2 name="profile">Personal Details</h2>
-            <div class="form-horizontal">
-              <div class="form-group">
-                <div class="col-sm-3 control-label">
-                  <label>Given name</label>
-                </div>
-                <div class="col-sm-9 controls">
-                  <input class="form-control" formControlName="given_name" />
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-3 control-label">
-                  <label>First name</label>
-                </div>
-                <div class="col-sm-9 controls">
-                  <input class="form-control" formControlName="first_name"/>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-3 control-label">
-                  <label>Last name</label>
-                </div>
-                <div class="col-sm-9 controls">
-                  <input class="form-control" formControlName="last_name"/>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-3 control-label">
-                  <label>Full name</label>
-                </div>
-                <div class="col-sm-9 controls">
-                  <input class="form-control" formControlName="full_name"/>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-3 control-label">
-                  <label>Nickname</label>
-                </div>
-                <div class="col-sm-9 controls">
-                  <input class="form-control" formControlName="nickname"/>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-3 control-label">
-                  <label>Birthdate</label>
-                </div>
-                <div class="col-sm-4 controls">
-                  <input type="date" class="form-control" formControlName="birthdate"/>
-                </div>
-                <div class="col-sm-2 control-label">
-                  <label>Gender</label>
-                </div>
-                <div class="col-sm-3 controls">
-                  <select class="form-control" formControlName="gender">
-                    <option value=""></option>
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="widget col-sm-12 col-md-6">
-            <h2 name="other">Other Details</h2>
-            <div class="form-horizontal">
-              <div class="form-group">
-                <div class="col-sm-3 control-label">
-                  <label>School</label>
-                </div>
-                <div class="col-sm-9 controls">
-                  <input class="form-control" formControlName="school"/>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-3 control-label">
-                  <label>Year/Course</label>
-                </div>
-                <div class="col-sm-9 controls">
-                  <input class="form-control" formControlName="grade"/>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-3 control-label">
-                  <label>Home Church</label>
-                </div>
-                <div class="col-sm-9 controls">
-                  <input class="form-control" formControlName="church"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
+  <div class="card-body py-3 px-0">
+    <app-person-profile [person]="person"></app-person-profile>
   </div>
-  <p>Form value: {{ personForm.value | json }}</p>
-  <p>Form status: {{ personForm.status | json }}</p>
-  <h4>Name change log</h4>
-  <div *ngFor="let name of valueChangeLog">{{name}}</div>
 </div>

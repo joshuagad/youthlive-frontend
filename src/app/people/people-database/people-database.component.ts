@@ -14,6 +14,13 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 })
 export class PeopleDatabaseComponent implements OnInit {
 
+  databases = [
+    {id: 0, name:'All Youth'},
+    {id: 1, name:'Congregation'},
+    {id: 2, name:'High School Camp'},
+    {id: 3, name:'College Camp'}
+  ];
+  activeDatabase = 0;
   people: Person[];
   bsModalRef: BsModalRef;
 

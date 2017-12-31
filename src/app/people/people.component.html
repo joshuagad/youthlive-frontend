@@ -1,25 +1,13 @@
-<div class="container-fluid" style="margin-top: 30px">
-  <div class="row">
-    <div class="facet-header col-sm-12">
-      <div class="facet-tabs">
-        <div class="facet-group" name="settings">
-          <div>
-            <ul class="facet-tab">
-              <li class="t selected"><a routerLink='/database' class="tab-link selected">Database</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="facet-group">
-          <div>
-            <ul class="facet-tab">
-              <li class="t"><a routerLink='discipleshiptree' class="tab-link">Discipleship Tree</a></li>
-              <li class="t"><a class="tab-link">Ministries</a></li>
-              <li class="t"><a class="tab-link">Other</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="card border-0">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item"><a class="nav-link active" routerLink='/database'>Database</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink='discipleshiptree'>Discipleship Tree</a></li>
+      <li class="nav-item"><a class="nav-link">Ministries</a></li>
+      <li class="nav-item"><a class="nav-link">Other</a></li>
+    </ul>
   </div>
-  <router-outlet></router-outlet>
+  <div class="card-body py-3 px-0">
+    <router-outlet></router-outlet>
+  </div>
 </div>

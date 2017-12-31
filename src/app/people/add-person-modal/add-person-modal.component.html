@@ -4,8 +4,7 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-
-<div class="modal-body">
+<div class="modal-body" style="font-size: 0.75rem">
   <div class="row">
     <form [formGroup]="newPersonForm" novalidate>
       <div class="col-sm-12">
@@ -19,35 +18,31 @@
             <input type="text" class="form-control" formControlName="last_name">
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-group col-sm-6">
             <label>Nickname</label>
             <input type="text" class="form-control" formControlName="nickname">
           </div>
           <div class="form-group col-sm-6">
-            <label>Gender</label>
-            <div class="form-check form-check-inline">
+            <legend class="col-form-label">Gender*</legend>
+            <div class="form-check-inline pl-1">
               <input class="form-check-input" type="radio" value="M" formControlName="gender" />
               <label class="form-check-label">Male</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check-inline">
               <input class="form-check-input" type="radio" value="F" formControlName="gender" />
               <label class="form-check-label">Female</label>
             </div>
           </div>
         </div>
-
       </div>
     </form>
   </div>
 </div>
-
 <div class="modal-footer">
-  <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Save and Close</button>
-  <button type="button" class="btn btn-success" (click)="modalRef.hide()">Save and Edit</button>
-  <button type="button" class="btn btn-info" (click)="modalRef.hide()">Save and Add New</button>
-  <button type="button" class="btn btn-danger" (click)="modalRef.hide()">Close</button>
+  <button type="button" class="btn btn-sm btn-primary" (click)="modalRef.hide()">Save and Close</button>
+  <button type="button" class="btn btn-sm btn-success" (click)="modalRef.hide()">Save and Edit</button>
+  <button type="button" class="btn btn-sm btn-info" (click)="modalRef.hide()">Save and Add New</button>
 </div>
 
 <p>{{newPersonForm.value | json}}</p>
