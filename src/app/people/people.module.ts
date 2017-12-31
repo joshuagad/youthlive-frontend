@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -18,6 +19,7 @@ import { PersonProfileComponent } from './person-profile/person-profile.componen
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
     PeopleRoutingModule

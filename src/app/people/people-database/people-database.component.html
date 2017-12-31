@@ -23,7 +23,7 @@
           </button>
         </div>
         <div class="pl-2">
-          <button type="button" class="btn btn-sm btn-outline-dark">
+          <button type="button" class="btn btn-sm btn-outline-dark" (click)=deletePeople()>
             <i class="fa fa-trash"></i> Delete</button>
         </div>
         <div class="pl-2">
@@ -34,7 +34,7 @@
       <table class="w-100 table table-striped table-bordered table-hover table-responsive-xs">
         <thead>
           <tr>
-            <th class="py-1 px-2" style="width:1rem"><input class="checkbox" type="checkbox" /></th>
+            <th class="py-1 px-2" style="width:1rem"><input class="checkbox" type="checkbox" [(ngModel)]="selectedAllPeople" (change)="selectAllPeople()" /></th>
             <th class="py-1 px-2">First Name</th>
             <th class="py-1 px-2">Last Name</th>
             <th class="py-1 px-2">Nickname</th>
@@ -44,12 +44,12 @@
         </thead>
         <tbody>
           <tr *ngFor="let person of people; let i = index">
-            <td class="py-1 px-2"><input type="checkbox" /></td>
-            <td class="py-1 px-2" (click)="viewPerson(person)">{{person.first_name}}</td>
-            <td class="py-1 px-2" (click)="viewPerson(person)">{{person.last_name}}</td>
-            <td class="py-1 px-2" (click)="viewPerson(person)">{{person.nickname}}</td>
-            <td class="py-1 px-2" (click)="viewPerson(person)">{{person.birthdate | date : "yyyy-MM-dd"}}</td>
-            <td class="py-1 px-2" (click)="viewPerson(person)">{{person.gender}}</td>
+            <td class="py-1 px-2"><input class="checkbox" type="checkbox" [(ngModel)]="selectedPeople[i]" /></td>
+            <td class="py-1 px-2"><a routerLink="/view/{{person._id}}">{{person.first_name}}</a></td>
+            <td class="py-1 px-2"><a routerLink="/view/{{person._id}}">{{person.last_name}}</a></td>
+            <td class="py-1 px-2"><a routerLink="/view/{{person._id}}">{{person.nickname}}</a></td>
+            <td class="py-1 px-2">{{person.birthdate | date : "yyyy-MM-dd"}}</td>
+            <td class="py-1 px-2">{{person.gender}}</td>
           </tr>
         </tbody>
       </table>

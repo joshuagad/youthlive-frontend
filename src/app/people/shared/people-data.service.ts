@@ -22,9 +22,18 @@ export class PeopleDataService {
     return this.http.get<Person>(url);
   }
 
+  addPerson(person: Person): Observable<Person> {
+    return this.http.post<Person>(this.peopleUrl, person);
+  }
+
   updatePerson(person: Person): Observable<any> {
     const url = `${this.peopleUrl}/${person._id}`;
     return this.http.put<Person>(url, person);
+  }
+
+  deletePerson(id: string): Observable<any> {
+    const url = `${this.peopleUrl}/${id}`;
+    return this.http.delete<any>(url);
   }
 
   searchPeople(term: string): Observable<Person[]> {

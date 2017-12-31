@@ -23,6 +23,8 @@ export class PeopleDatabaseComponent implements OnInit {
   activeDatabase = 0;
   people: Person[];
   bsModalRef: BsModalRef;
+  selectedPeople = {};
+  selectedAllPeople = false;
 
   constructor(
     private peopleDataService: PeopleDataService,
@@ -43,6 +45,22 @@ export class PeopleDatabaseComponent implements OnInit {
 
   addPerson() {
     this.modalService.show(AddPersonModalComponent);
+  }
+
+  deletePeople() {
+    var toDelete = Object.entries(this.selectedPeople).filter(arr => arr[1]).map(arr => arr[0]);
+    for (let index of toDelete) {
+      var id = this.people[index]._id;
+      this.peopleDataService.deletePerson(id).subscribe(message => {});
+    }
+    this.selectedPeople = {};
+    this.getAllPeople();
+  }
+
+  selectAllPeople(): void {
+    for (var i=0; i<this.people.length; i++) {
+      this.selectedPeople[i] = this.selectedAllPeople;
+    }
   }
 
   ngOnInit() {
