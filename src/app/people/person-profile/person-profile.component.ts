@@ -1,23 +1,24 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { Observable } from 'rxjs/Observable';
 import { Person } from '../shared/person.model';
 
-import { PeopleDataService } from '../shared/people-data.service';
+import { PersonDetailsService } from '../shared/person-details.service';
 
 @Component({
   selector: 'app-person-profile',
   templateUrl: './person-profile.component.html',
   styleUrls: ['./person-profile.component.css'],
 })
-export class PersonProfileComponent implements OnChanges {
+export class PersonProfileComponent implements OnInit {
 
-  @Input() person;
-  personForm: FormGroup;
+  private person$: Observable<Person>;
+  private person: Person;
+  private personForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private peopleDataService: PeopleDataService
+    private personDetailsService: PersonDetailsService
   ) {
     this.personForm = fb.group({
       given_name: '',
@@ -37,12 +38,18 @@ export class PersonProfileComponent implements OnChanges {
     });
   }
 
-  updatePerson(): void {
+  loadData(): void {
+    this.person$.subscribe(person => {
+      this.person = person;
+      this.personForm.reset(this.person;
+    });
+  }
+
+  submitData(): void {
     const savePerson: Person = this.personForm.value;
     savePerson._id = this.person._id;
-    this.peopleDataService.updatePerson(savePerson).subscribe(value => {
-      this.refreshData();
-    });
+    this.personDetailsService.updatePerson(savePerson);
+    this.loadData();
   }
 
   revertData(): void {
@@ -50,14 +57,11 @@ export class PersonProfileComponent implements OnChanges {
   }
 
   refreshData(): void {
-    // this.getPerson();
+    this.loadData();
   }
 
-  submitData(): void {
-    this.updatePerson();
-  }
-
-  ngOnChanges() {
-    this.revertData();
+  ngOnInit() {
+    this.person$ = this.personDetailsService.getPerson();
+    this.loadData();
   }
 }

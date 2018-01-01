@@ -2,7 +2,7 @@
   <div class="card-header">
     <h1 class="my-3">
       <i class="fa fa-fw fa-user"></i>
-      <span class="facet-pkey" title="">{{person.first_name}} {{person.last_name}}</span>
+      <span>{{(person$ | async).full_name}}</span>
     </h1>
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item"><a class="nav-link active">Profile</a></li>
@@ -12,6 +12,6 @@
     </ul>
   </div>
   <div class="card-body py-3 px-0">
-    <app-person-profile [person]="person"></app-person-profile>
+    <router-outlet></router-outlet>
   </div>
 </div>

@@ -21,7 +21,6 @@ export class PeopleDatabaseComponent implements OnInit {
     {id: 3, name:'College Camp'}
   ];
   activeDatabase = 0;
-  people: Person[];
   bsModalRef: BsModalRef;
   selectedPeople = {};
   selectedAllPeople = false;
@@ -53,9 +52,7 @@ export class PeopleDatabaseComponent implements OnInit {
   }
 
   selectAllPeople(): void {
-    // for (let i=0; i<this.peopleList$.length; i++) {
-    //   this.selectedPeople[] = this.selectedAllPeople;
-    // }
+    // this.
   }
 
   ngOnInit() {

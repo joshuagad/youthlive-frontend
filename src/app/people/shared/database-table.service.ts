@@ -7,7 +7,7 @@ import { Person } from './person.model';
 @Injectable()
 export class DatabaseTableService {
   private peopleUrl = 'http://localhost:3000/people';
-  public peopleList = new BehaviorSubject<Person[]>([]);
+  private peopleList = new BehaviorSubject<Person[]>([]);
 
   constructor(
     private http: HttpClient

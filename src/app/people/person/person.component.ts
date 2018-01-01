@@ -1,33 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DatePipe } from '@angular/common';
 import { Person } from '../shared/person.model';
-import { PeopleDataService } from '../shared/people-data.service';
+import { PersonDetailsService } from '../shared/person-details.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-person',
   templateUrl: './person.component.html',
-  styleUrls: ['./person.component.css'],
-  providers: [ DatePipe ]
+  styleUrls: ['./person.component.css']
 })
 export class PersonComponent implements OnInit {
-  person = new Person;
+  person$: Observable<Person>;
 
   constructor(
     private route: ActivatedRoute,
-    private datePipe: DatePipe,
-    private peopleDataService: PeopleDataService
+    private personDetailsService: PersonDetailsService
   ) { }
 
   getPerson(): void {
     const id = this.route.snapshot.paramMap.get('_id');
-    this.peopleDataService.getPersonById(id).subscribe(person => {
-      this.person = person;
-      this.person.birthdate = this.datePipe.transform(this.person.birthdate, 'y-MM-dd');
-    })
+    this.personDetailsService.getPersonById(id);
   }
 
   ngOnInit() {
+    this.person$ = this.personDetailsService.getPerson();
     this.getPerson();
   }
 }

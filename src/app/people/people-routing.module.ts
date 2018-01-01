@@ -12,7 +12,11 @@ const routes: Routes = [
       { path: '', component:  PeopleDatabaseComponent }
     ]
   },
-  { path: 'view/:_id', component: PersonComponent }
+  { path: 'view/:_id', component: PersonComponent,
+    children: [
+      { path: '', component: PersonProfileComponent }
+    ]
+  }
 ];
 
 @NgModule({
