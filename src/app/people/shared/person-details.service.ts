@@ -7,7 +7,7 @@ import { DatePipe } from '@angular/common';
 
 @Injectable()
 export class PersonDetailsService {
-  private peopleUrl = 'http://localhost:3000/people';
+  private peopleUrl = 'https://35.227.77.30/api/people';
   private person = new BehaviorSubject<Person>(new Person);
 
   constructor(

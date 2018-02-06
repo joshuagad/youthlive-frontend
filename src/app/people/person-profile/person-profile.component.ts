@@ -14,7 +14,7 @@ export class PersonProfileComponent implements OnInit {
 
   private person$: Observable<Person>;
   private person: Person;
-  private personForm: FormGroup;
+  public personForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -31,7 +31,7 @@ export class PersonProfileComponent implements OnInit {
       mobileno: '',
       email: '',
       facebook_id: '',
-      grade: '',
+      year: '',
       course: '',
       school: '',
       church: ''
@@ -41,7 +41,7 @@ export class PersonProfileComponent implements OnInit {
   loadData(): void {
     this.person$.subscribe(person => {
       this.person = person;
-      this.personForm.reset(this.person;
+      this.personForm.reset(this.person);
     });
   }
 

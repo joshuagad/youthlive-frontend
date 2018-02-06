@@ -7,7 +7,7 @@ export class Person {
   nickname: string = '';
   birthdate: string = '';
   gender: string = '';
-  grade: string = '';
+  year: string = '';
   school: string = '';
   church: string = '';
 }
